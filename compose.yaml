@@ -1,0 +1,12 @@
+version: "3.9"
+ 
+services:
+  influxdb:
+    image: influxdb:2.7
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./conf/influx:/etc/influxdb2
+      - ./data/influx:/var/lib/influxdb2
